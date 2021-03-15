@@ -1,6 +1,17 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { shade } from 'polished';
 import telacadastro from '../../Assets/cadastro.jpg';
+
+const appearFromLeft = keyframes`
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+`;
 
 export const Container = styled.div`
   height: 100vh;
@@ -11,6 +22,8 @@ export const Container = styled.div`
   justify-content: center;
   margin: -10px;
   margin-right: -3px;
+
+  animation: ${appearFromLeft} 1s;
 
   form {
     display: flex;
@@ -37,12 +50,17 @@ export const Container = styled.div`
     p {
       font-size: 15px;
       color: #b45252;
-
+      font-family: 'Roboto Slab', serif;
+      font-size: 13px;
       input {
         background: #ffdede;
         width: 260px;
         height: 30px;
         border: none;
+
+        ::placeholder {
+          color: pink;
+        }
       }
     }
 
@@ -53,6 +71,7 @@ export const Container = styled.div`
       height: 30px;
       color: #fff;
       border: 1px solid #b45252;
+      transition: background-color 0.2s;
 
       &:hover {
         background: ${shade(0.1, '#f16262')};
@@ -69,6 +88,7 @@ export const Container = styled.div`
         font-size: 17px;
         text-decoration: none;
         color: #b45252;
+        transition: color 0.2s;
         &:hover {
           color: ${shade(0.2, '#b45252')};
         }

@@ -31,6 +31,8 @@
     "@typescript-eslint/no-use-before-define": ["error"],
     "arrow-body-style": "off",
     "react/react-in-jsx-scope": "off",
+    "arrow-parens": "off",
+    "object-curly-newline": "off",
     "import/extensions": [
       "error",
       "ignorePackages",

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { FcImport } from 'react-icons/fc';
 import { Container } from './style';
 
@@ -23,16 +24,16 @@ const SignUp: React.FC = () => {
           Senha :
           <input type="password" className="pass" />
           <h1>&</h1>
-          <input type="password" className="pass" />
+          <input type="password" className="pass" placeholder="Confirme" />
         </p>
 
         <button type="button">Entrar</button>
 
         <div>
-          <a href="https://www.figma.com">
+          <Link to="/">
             Voltar para o Login
             <FcImport />
-          </a>
+          </Link>
         </div>
       </form>
     </Container>

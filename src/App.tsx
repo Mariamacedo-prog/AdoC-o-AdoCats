@@ -1,7 +1,11 @@
 import React from 'react';
-import SignIn from './Pages/SignIn/index';
-// import SignUp from './Pages/SignUp/index';
+import { BrowserRouter as Router } from 'react-router-dom';
+import Routes from './Routes';
 
-const App: React.FC = () => <SignIn />;
+const App: React.FC = () => (
+  <Router>
+    <Routes />
+  </Router>
+);
 
 export default App;

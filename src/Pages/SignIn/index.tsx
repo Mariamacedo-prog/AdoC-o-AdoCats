@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { SiGnuicecat } from 'react-icons/si';
 import { Container } from './style';
 
@@ -20,11 +21,9 @@ const SignIn: React.FC = () => {
         <button type="button">Entrar</button>
 
         <div>
-          <a href="https://www.figma.com">
-            <SiGnuicecat />
-            Criar sua conta
-            <SiGnuicecat />
-          </a>
+          <SiGnuicecat />
+          <Link to="/signup">Crie sua conta</Link>
+          <SiGnuicecat />
         </div>
       </form>
     </Container>
