@@ -1,17 +1,16 @@
-import firebase from 'firebase';
+import firebase from 'firebase/app';
+import 'firebase/auth';
+import 'firebase/database';
+import 'firebase/firestore';
 
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+export const firebaseapp = firebase.initializeApp({
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
+  measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENTID,
+});
 
-const firebaseConfig = {
-  apiKey: 'AIzaSyCSxiOgLw8nR1RMukglK9G6OMgN6OdST8g',
-  authDomain: 'adocao-adocats.firebaseapp.com',
-  projectId: 'adocao-adocats',
-  storageBucket: 'adocao-adocats.appspot.com',
-  messagingSenderId: '852065738852',
-  appId: '1:852065738852:web:8ca65ec5db78bed37fbf71',
-  measurementId: 'G-MM9E717Z4H',
-};
-
-const firebaseapp = firebase.initializeApp(firebaseConfig);
-const database = firebaseapp.firestore();
-export default database;
+export const database = firebaseapp.firestore();

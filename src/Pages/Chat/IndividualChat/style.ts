@@ -76,6 +76,26 @@ export const Header = styled.header`
       }
     }
   }
+
+  button {
+    border: none;
+    background: #ffdede;
+    svg {
+      padding: 20px;
+      width: 30px;
+      height: 30px;
+      color: #f4afaf;
+      border: 1px solid transparent;
+      transition: color 0.2s;
+      padding: 15px;
+
+      &:hover {
+        color: ${shade(0, '#900000')};
+        border: 1px solid #f4afaf;
+        border-radius: 50%;
+        background: #f4afaf;
+      }
+    }
 `;
 
 export const Content = styled.div`

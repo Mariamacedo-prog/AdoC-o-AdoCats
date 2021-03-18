@@ -58,8 +58,21 @@ export const Header = styled.header`
     height: 100px;
     margin-left: 100px;
   }
-  a {
     .menu {
+      padding: 20px;
+      width: 30px;
+      height: 30px;
+      color: #900000;
+      border: 1px solid transparent;
+      transition: color 0.2s;
+      padding: 15px;
+      border-radius: 50%;
+      background: #f4afaf;
+    }
+  button {
+    border: none;
+    background: #ffdede;
+    svg {
       padding: 20px;
       width: 30px;
       height: 30px;
@@ -75,7 +88,6 @@ export const Header = styled.header`
         background: #f4afaf;
       }
     }
-  }
 `;
 
 export const Section = styled.section`
@@ -88,8 +100,8 @@ export const Section = styled.section`
     border-bottom: 1px solid #fff;
   }
   .imageChat {
-    width: 50px;
-    height: 50px;
+    width: 55px;
+    height: 55px;
     border-radius: 50%;
     margin-right: 20px;
   }
@@ -114,6 +126,7 @@ export const Section = styled.section`
 
 export const Content = styled.div`
   height: 440px;
+  overflow-y: scroll;
 `;
 
 export const Footer = styled.footer`

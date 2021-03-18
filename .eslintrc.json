@@ -29,9 +29,12 @@
     "no-use-before-define": "off",
     "import/prefer-default-export": "off",
     "@typescript-eslint/no-use-before-define": ["error"],
+    "react/jsx-props-no-spreading": "off",
     "arrow-body-style": "off",
     "react/react-in-jsx-scope": "off",
     "arrow-parens": "off",
+    "import/no-duplicates": "off",
+    "react/prop-types": "off",
     "object-curly-newline": "off",
     "import/extensions": [
       "error",

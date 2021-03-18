@@ -1,36 +1,46 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useCallback } from 'react';
+import { Link, useHistory, Redirect } from 'react-router-dom';
 import { FcImport } from 'react-icons/fc';
 import { Container } from './style';
+import { firebaseapp } from '../../Firebase';
 
 const SignUp: React.FC = () => {
+  const history = useHistory();
+
+  const handleSubmit = useCallback(
+    async event => {
+      event.preventDefault();
+      const { email, password } = event.target.elements;
+      try {
+        await firebaseapp
+          .auth()
+          .createUserWithEmailAndPassword(email.value, password.value);
+
+        history.push('/');
+      } catch (err) {
+        throw new Error(`Não foi possível realizar o cadastro ${err.message} `);
+      }
+    },
+    [history],
+  );
+
+  const user = firebaseapp.auth().currentUser;
+
+  if (user) {
+    return <Redirect to="/" />;
+  }
+
   return (
     <Container>
-      <form>
-        <p className="telefone">
-          Telefone:
-          <input key="emailSignIn" className="tel" />
-        </p>
-        <p className="nome">
-          Nome :
-          <input key="emailSignIn" className="name" />
-        </p>
-        <p>
-          E-mail:
-          <input key="emailSignIn" className="email" />
-        </p>
-
-        <p className="password">
-          Senha :
-          <input type="password" className="pass" />
-          <h1>&</h1>
-          <input type="password" className="pass" placeholder="Confirme" />
-        </p>
-
-        <button type="button">Entrar</button>
+      <form onSubmit={handleSubmit}>
+        <p>Email</p>
+        <input name="email" type="email" />
+        <p>Senha</p>
+        <input type="password" name="password" />
+        <button type="submit">Cadastrar</button>
 
         <div>
-          <Link to="/">
+          <Link to="/signin">
             Voltar para o Login
             <FcImport />
           </Link>

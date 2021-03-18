@@ -1,10 +1,13 @@
 import React from 'react';
 import { MdPowerSettingsNew, MdChatBubble } from 'react-icons/md';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Logo from '../../Assets/Logo.png';
+import { useAuth } from '../../Auth/auth';
 import { PrincipalHeader } from './style';
 
 const Header: React.FC = () => {
+  const { signOut } = useAuth();
+
   return (
     <PrincipalHeader>
       <span className="profile">
@@ -19,7 +22,7 @@ const Header: React.FC = () => {
         </div>
       </span>
 
-      <Link to="/dashboard">
+      <Link to="/">
         <img className="logo" src={Logo} alt="Logo" />
       </Link>
 
@@ -27,9 +30,9 @@ const Header: React.FC = () => {
         <Link to="/chat">
           <MdChatBubble />
         </Link>
-        <Link to="/">
+        <button type="button" onClick={signOut}>
           <MdPowerSettingsNew />
-        </Link>
+        </button>
       </span>
     </PrincipalHeader>
   );

@@ -2,9 +2,11 @@ import React, { useState, useCallback } from 'react';
 import { MdPowerSettingsNew, MdChatBubble, MdArrowBack } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 import Logo from '../../../Assets/Logo.png';
+import { useAuth } from '../../../Auth/auth';
 import { Container, Content, Footer, Header } from './style';
 
 const IndividualChat: React.FC = () => {
+  const { signOut } = useAuth();
   const [input, setInput] = useState('');
   const [messages, setMessages] = useState([
     {
@@ -42,7 +44,7 @@ const IndividualChat: React.FC = () => {
           </Link>
         </div>
 
-        <Link to="/dashboard">
+        <Link to="/">
           <img className="logo" src={Logo} alt="Logo" />
         </Link>
 
@@ -50,9 +52,9 @@ const IndividualChat: React.FC = () => {
           <Link to="/chat">
             <MdChatBubble className="menu" />
           </Link>
-          <Link to="/">
-            <MdPowerSettingsNew className="menu" />
-          </Link>
+          <button type="button" onClick={signOut}>
+            <MdPowerSettingsNew />
+          </button>
         </span>
       </Header>
       <Content>
@@ -61,7 +63,7 @@ const IndividualChat: React.FC = () => {
             COMEÇOU A CONVERSA DIA 16/03/2021
           </p>
           {messages.map(message => (
-            <div key={message.name}>
+            <div key={message.message}>
               {message.name ? (
                 <div className="individualChatContent_message">
                   {message.imgPerfil === '' ? (
