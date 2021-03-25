@@ -4,7 +4,6 @@ import {
   RouteProps as ReactDOMRouteProps,
   Redirect,
 } from 'react-router-dom';
-import { firebaseapp } from '../Firebase';
 import { useAuth } from '../Auth/auth';
 
 interface RouteProps extends ReactDOMRouteProps {

@@ -23,12 +23,29 @@ export const PrincipalHeader = styled.header`
         color: #900000;
         font-family: 'Roboto Slab', serif;
         margin-bottom: 0;
+        h2 {
+          padding: 0;
+          font-size: 15px;
+          margin: 0;
+          color: #f16262;
+        }
       }
+
+      .linkProfile {
+        margin: 0;
+        color: #f16262;
+        transition: color 0.2s;
+        &:hover {
+          color: ${shade(0.1, '#900000')};
+        }
+      }
+
       a {
         text-decoration: none;
         font-size: 9px bold;
         color: #f16262;
         font-family: 'Roboto Slab', serif;
+        transition: color 0.2s;
 
         &:hover {
           color: ${shade(0.1, '#f16262')};
@@ -55,13 +72,15 @@ export const PrincipalHeader = styled.header`
       height: 30px;
       color: #f4afaf;
       border: 1px solid transparent;
+      border-radius: 50%;
       transition: color 0.2s;
+      transition: background-color 0.2s;
       padding: 15px;
 
       &:hover {
         color: ${shade(0, '#900000')};
         border: 1px solid #f4afaf;
-        border-radius: 50%;
+
         background: #f4afaf;
       }
     }
@@ -75,14 +94,17 @@ export const PrincipalHeader = styled.header`
       width: 30px;
       height: 30px;
       color: #f4afaf;
+
       border: 1px solid transparent;
       transition: color 0.2s;
+      border-radius: 50%;
+      transition: background-color 0.2s;
       padding: 15px;
 
       &:hover {
         color: ${shade(0, '#900000')};
         border: 1px solid #f4afaf;
-        border-radius: 50%;
+
         background: #f4afaf;
       }
     }

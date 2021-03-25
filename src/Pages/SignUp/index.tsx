@@ -18,7 +18,9 @@ const SignUp: React.FC = () => {
 
         history.push('/');
       } catch (err) {
-        throw new Error(`Não foi possível realizar o cadastro ${err.message} `);
+        alert(
+          'Erro ao fazer o cadastro! verifique se o e-mail esta correto e se a senha possui mais de 6 digitos',
+        );
       }
     },
     [history],
@@ -33,10 +35,16 @@ const SignUp: React.FC = () => {
   return (
     <Container>
       <form onSubmit={handleSubmit}>
-        <p>Email</p>
-        <input name="email" type="email" />
-        <p>Senha</p>
-        <input type="password" name="password" />
+        <p>
+          Email :
+          <input name="email" type="email" />
+        </p>
+
+        <p>
+          Senha :
+          <input type="password" name="password" />
+        </p>
+
         <button type="submit">Cadastrar</button>
 
         <div>

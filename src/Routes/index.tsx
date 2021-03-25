@@ -5,6 +5,7 @@ import SignUp from '../Pages/SignUp';
 import SignIn from '../Pages/SignIn';
 import Dashboard from '../Pages/Dashboard';
 import Chat from '../Pages/Chat';
+import Profile from '../Pages/Profile';
 import IndividualChat from '../Pages/Chat/IndividualChat';
 
 const Routes: React.FC = () => (
@@ -14,6 +15,7 @@ const Routes: React.FC = () => (
 
     <Route exact path="/" component={Dashboard} isPrivate />
     <Route exact path="/chat" component={Chat} isPrivate />
+    <Route path="/profile" component={Profile} isPrivate />
     <Route path="/chat/:users" component={IndividualChat} isPrivate />
   </Switch>
 );

@@ -33,34 +33,18 @@ export const Container = styled.div`
     margin-top: 200px;
     margin-right: 100px;
 
-    p.password {
-      display: flex;
-      h1 {
-        font-size: 15px;
-      }
-
-      .pass {
-        background: #ffdede;
-        width: 122px;
-        height: 30px;
-        border: none;
-      }
-    }
-
     p {
+      align-items: center;
       font-size: 15px;
       color: #b45252;
       font-family: 'Roboto Slab', serif;
       font-size: 13px;
-      input {
-        background: #ffdede;
-        width: 260px;
-        height: 30px;
-        border: none;
-
-        ::placeholder {
-          color: pink;
-        }
+    }
+    input {
+      background: #ffdede;
+      width: 260px;
+      height: 30px;
+      border: none;
       }
     }
 

@@ -1,7 +1,6 @@
 import React, { useCallback } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { SiGnuicecat } from 'react-icons/si';
-import { firebaseapp } from '../../Firebase';
 import { Container } from './style';
 import { useAuth } from '../../Auth/auth';
 
@@ -22,7 +21,7 @@ const SignIn: React.FC = () => {
 
         history.push('/');
       } catch (err) {
-        throw new Error(`Não foi possível realizar o login ${err.message} `);
+        alert('Erro ao fazer login! verifique email, senha e tente novamente.');
       }
     },
     [history, signIn],
@@ -43,12 +42,12 @@ const SignIn: React.FC = () => {
           </a>
         </p>
         <button type="submit">entrar</button>
+        <div>
+          <SiGnuicecat />
+          <Link to="/signup">Crie sua conta</Link>
+          <SiGnuicecat />
+        </div>
       </form>
-      <div>
-        <SiGnuicecat />
-        <Link to="/signup">Crie sua conta</Link>
-        <SiGnuicecat />
-      </div>
     </Container>
   );
 };

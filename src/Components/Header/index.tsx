@@ -6,19 +6,36 @@ import { useAuth } from '../../Auth/auth';
 import { PrincipalHeader } from './style';
 
 const Header: React.FC = () => {
-  const { signOut } = useAuth();
+  const { signOut, currentUser } = useAuth();
+
+  console.log(currentUser);
 
   return (
     <PrincipalHeader>
       <span className="profile">
-        <img
-          className="perfil"
-          src="https://avatars.githubusercontent.com/u/69858181?s=460&u=14a59ccf19348b6623abc13ed2c60ca268bf0cfb&v=4"
-          alt="Maria"
-        />
+        {currentUser.photoURL != null ? (
+          <img
+            src={currentUser.photoURL}
+            alt={currentUser.displayName}
+            className="perfil"
+          />
+        ) : (
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtMSJVFa7B0cIx1c1c9egYBfaxDJlSo3HqX48VosilokU6Au9APnBqZj53WoOi1eltGdg&usqp=CAU"
+            alt={currentUser.displayName}
+            className="perfil"
+          />
+        )}
+
         <div>
-          <p>Bem vindo(a),</p>
-          <Link to="/profile">Maria Macedo</Link>
+          <p>
+            Bem vindo(a),
+            <h2>{currentUser.displayName}</h2>
+          </p>
+
+          <Link to="/profile">
+            <p className="linkProfile"> ver perfil...</p>
+          </Link>
         </div>
       </span>
 

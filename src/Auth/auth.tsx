@@ -9,15 +9,15 @@ import { firebaseapp } from '../Firebase';
 
 interface AuthContextData {
   signed: boolean;
-  currentUser: unknown | null;
-  signIn(currentUser: unknown | null): Promise<void>;
+  currentUser: any | null;
+  signIn(currentUser: any | null): Promise<void>;
   signOut(): void;
 }
 
 const AuthContext = createContext<AuthContextData>({} as AuthContextData);
 
 const AuthProvider: React.FC = ({ children }) => {
-  const [currentUser, setCurrentUser] = useState<unknown | null>(null);
+  const [currentUser, setCurrentUser] = useState<any | null>(null);
 
   const signIn = useCallback(async ({ email, password }) => {
     const response = await firebaseapp
