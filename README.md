@@ -1,3 +1,25 @@
+
+![image](https://user-images.githubusercontent.com/69858181/112706406-ae886880-8e82-11eb-9ff1-7a23a23462de.png)
+
+
+![image](https://user-images.githubusercontent.com/69858181/112706396-9f091f80-8e82-11eb-9114-7097fc84bf07.png)
+![image](https://user-images.githubusercontent.com/69858181/112706429-d37cdb80-8e82-11eb-82ea-d87204d91f94.png)
+![image](https://user-images.githubusercontent.com/69858181/112706436-e0013400-8e82-11eb-9556-aed937f9305a.png)
+
+# CHAT EM ANDAMENTO
+
+
+![image](https://user-images.githubusercontent.com/69858181/112706439-e7c0d880-8e82-11eb-902d-8748df583207.png)
+![image](https://user-images.githubusercontent.com/69858181/112706441-ec858c80-8e82-11eb-9c2c-f784ba0ebb91.png)
+![image](https://user-images.githubusercontent.com/69858181/112706413-b9db9400-8e82-11eb-98cd-0ef1e29fd0fe.png)
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
